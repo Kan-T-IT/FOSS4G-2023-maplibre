@@ -250,8 +250,32 @@ function App() {
             "fill-extrusion-color": isCheckColoredByControl
               ? colorByControl
               : coloredByExpression,
-            "fill-extrusion-height": ["*", size / 10, ["*", ["get", "h_max"]]],
-            "fill-extrusion-opacity": opacity / 100,
+              // "fill-extrusion-height": ["*", size / 10, ["*", ["get", "h_max"]]],
+              "fill-extrusion-height": size,
+              "fill-extrusion-opacity": opacity / 100,
+          }}
+          tileSize={512}
+        />
+        <Layer
+          id="kosovo1"
+          typeSource="vector"
+          type="fill-extrusion"
+          //scheme="tms"
+          sourceLayer="poligonos_kosovo"
+          tiles={[
+            // "http://localhost:81/data/layer_1/{z}/{x}/{y}.pbf",
+            // "https://tiles.kan.com.ar/data/construccion/{z}/{x}/{y}.pbf",
+            // "https://tiles.kan.com.ar/data/tejido_gcba/{z}/{x}/{y}.pbf",
+            //"https://vectortiles.usig.buenosaires.gob.ar/cur3d/tejido/{z}/{x}/{y}.pbf?optimize=true",
+            // "https://geoportal.lujandecuyo.gob.ar/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geonode:parcelas_vol_extruir_zonif3d&STYLE=&TILEMATRIX=EPSG:3857:{z}&TILEMATRIXSET=EPSG:3857&FORMAT=application/vnd.mapbox-vector-tile&TILECOL={x}&TILEROW={y}",
+            "https://demo4.kan.com.ar/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geonode:poligonos_kosovo&STYLE=&TILEMATRIX=EPSG:3857:{z}&TILEMATRIXSET=EPSG:3857&FORMAT=application/vnd.mapbox-vector-tile&TILECOL={x}&TILEROW={y}",
+          ]}
+          paint={{
+            // "fill-extrusion-color": `rgb(${r}, ${g}, ${b})`,
+            "fill-extrusion-color": colorByControl,
+              // "fill-extrusion-height": ["*", size / 10, ["*", ["get", "h_max"]]],
+              "fill-extrusion-height": size,
+              "fill-extrusion-opacity": opacity / 100,
           }}
           tileSize={512}
         />
