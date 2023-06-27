@@ -279,6 +279,31 @@ function App() {
           }}
           tileSize={512}
         />
+        <Layer
+          id="kosovo2"
+          typeSource="vector"
+          type="line"
+          sourceLayer="lineas_kosovo"
+          tiles={[
+            "https://demo4.kan.com.ar/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=geonode:lineas_kosovo&STYLE=&TILEMATRIX=EPSG:3857:{z}&TILEMATRIXSET=EPSG:3857&FORMAT=application/vnd.mapbox-vector-tile&TILECOL={x}&TILEROW={y}",
+          ]}
+          paint={{
+            "line-color": "#f00",
+            "line-width": ["get", "zoom"],
+            "line-opacity": opacity / 100,
+          }}
+          tileSize={512}
+        />
+        <Layer
+          id="kosovo3"
+          typeSource="raster"
+          type="raster"
+          tiles={[
+            "https://demo4.kan.com.ar/geoserver/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&LAYERS=geonode%3Apuntos_kosovo&STYLES=&SRS=EPSG%3A3857&CRS=EPSG%3A3857&TILED=true&access_token=None&WIDTH=512&HEIGHT=512&BBOX={bbox-epsg-3857}",
+          ]}
+          tileSize={512}
+          sourceLayer="puntos_kosovo"
+        />
       </Map>
     </div>
   );

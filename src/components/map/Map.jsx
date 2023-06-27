@@ -21,7 +21,7 @@ export const Map = ({ children }) => {
           style: "https://demotiles.maplibre.org/style.json", // stylesheet location
           // center: [-87.61694, 41.86625], //Chicago
           // center: [-58.381507, -34.603344], // Buenos aires
-          center: [-68.880332, -33.037265], // San Luis
+          center: [20.733024, 42.212035], // San Luis
           // center: [-99.15747, 19.3738], // Mexico City
           // center: [-74.5, 40], // Layer 1
           zoom: 14, // starting zoom
